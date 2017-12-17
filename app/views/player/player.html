@@ -1,0 +1,42 @@
+<div class="row" id="row">
+
+    <div class="col-md-12">
+
+        <div id="title">
+            <span id="track">{{tracName}}</span>
+            <div id="timer">0:00</div>
+            <div id="duration">{{timer}}</div>
+        </div>
+
+        <div class="controlsOuter">
+
+            <div class="controlsInner">
+
+                <div id="loading"></div>
+
+                <div class="btn" id="playBtn" ng-show='!songPlaying' ng-click='playMusic()'>
+                </div>
+                <div class="btn" id="pauseBtn" ng-show='songPlaying' ng-click='playMusic()'>
+                </div>
+                <div class="btn" id="prevBtn" ng-click='prevSong()'>
+                </div>
+                <div class="btn" id="nextBtn" ng-click='nextSong()'>
+                </div>
+
+            </div>
+            <div class="btn" id="playlistBtn" ng-click='showPlaylist()'></div>
+
+        </div>
+        <div id="waveform" ng-show='songPlaying' ng-click="seekToTime($event)" ></div>
+        <div id="bar" ng-hide='songPlaying'></div>
+        <div id="progress"></div>
+        <div id="playlist" ng-show='playListVisible'>
+            <div id="list">
+                <div class="list-song" ng-repeat="song in player.playlist" ng-click="playPlaylistSong($index)">
+                    {{song.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
