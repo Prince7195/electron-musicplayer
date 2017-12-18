@@ -36,8 +36,8 @@ angular.module('Player.player', ['ngRoute'])
             height: window.innerHeight * 0.3,
             cover: true,
             speed: 0.03,
-            amplitude: 0.7,
-            frequency: 2
+            amplitude: 2,
+            frequency: 9
         });
         $scope.wave.start();
         $scope.$apply();
